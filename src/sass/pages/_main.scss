@@ -1,0 +1,134 @@
+.btn-badge {
+    padding: 8px 18px;
+    border: none;
+    background-image: linear-gradient($color-logo, lighten($color: $color-logo, $amount: 0.5));
+    font-weight: 600;
+    font-size: 12px;
+    color: $color-white;
+    border-radius: 4px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+main {
+    position: absolute;
+    left: 280px;
+    right: 0;
+    padding: 40px 0;
+    box-sizing: border-box;
+    height: calc(100vh - 72px);
+    background-color: $color-primary;
+}
+
+.game-details {
+    .offer {
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 0;
+        color: rgba($color-white, 40%);
+        margin-bottom: 10px;
+    }
+    .title {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 18px;
+        letter-spacing: 0;
+        color: $color-white;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+}
+
+.navigations {
+    *:not(.arrow) {
+        margin-left: 10px;
+    }
+    [class^=nav] {
+        padding: 6px 10px;
+        background: transparent;
+        border: 1px solid rgba($color-white, 15%);
+        border-radius: 4px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .arrow {
+        border: solid $color-white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        &-left {
+            transform: rotate(135deg);
+        }
+        &-right {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+.game-details {
+    overflow: hidden;
+}
+
+button:disabled {
+    opacity: .3;
+}
+// cards 
+.card-stage {
+    width: 2550px;
+    transition: all 0.25s ease 0s;
+    .card {
+        display: inline-block;
+        min-height: 294px;
+        border-radius: 6px;
+        width: 10%;
+        position: relative;
+        background-color: rgba($color-white, 4%);
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+    .game-img {
+        border-radius: 6px 6px 0 0;
+        width: 100%;
+    }
+    .game-category-badge {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+    }
+}
+
+.card-description {
+    padding: 15px;
+    border-bottom: 1px solid rgba($color-grey, 10%);
+    height: 88px;
+    box-sizing: border-box;
+    .game-name {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 12px;
+        letter-spacing: 0;
+        color: $color-white;
+        margin-bottom: 10px;
+    }
+    .game-description {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0;
+        color: rgba($color-white, 50%);
+    }
+}
+
+.score-wrapper { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    color: $color-white;
+}

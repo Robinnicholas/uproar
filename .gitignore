@@ -1,0 +1,3 @@
+# ignore the file node modules
+node_modules/
+
