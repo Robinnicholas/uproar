@@ -21,6 +21,7 @@ main {
     background-color: $color-primary;
 }
 
+
 .game-details {
     .offer {
         font-weight: 600;
@@ -28,13 +29,6 @@ main {
         letter-spacing: 0;
         color: rgba($color-white, 40%);
         margin-bottom: 10px;
-    }
-    .title {
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 18px;
-        letter-spacing: 0;
-        color: $color-white;
     }
     .wrapper {
         display: flex;

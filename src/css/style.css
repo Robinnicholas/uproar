@@ -1,3 +1,15 @@
+.title {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.body:not(.active) {
+  display: none;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -138,6 +150,9 @@ header .nav-left-link:not(:first-child) {
   header .nav-left-link:not(:first-child) {
     margin: 0 15px;
   }
+}
+header .nav-left-link:first-child {
+  margin-right: 30px;
 }
 header .nav-left-link a:not(.text-white) {
   font-size: 14px;
@@ -412,13 +427,6 @@ main {
   letter-spacing: 0;
   color: rgba(255, 255, 255, 0.4);
   margin-bottom: 10px;
-}
-.game-details .title {
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 18px;
-  letter-spacing: 0;
-  color: #ffffff;
 }
 .game-details .wrapper {
   display: flex;

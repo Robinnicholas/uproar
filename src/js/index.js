@@ -1,103 +1,5 @@
  function WeeklyQuest(i){
     let stage = document.querySelector('.card-stage');
-    let gameCards = [
-        {
-            gameName    : "PUBG Mobile",
-            src         : "images/pubg.jpg",
-            srcset      : "images/pubg.jpg 1x, images/pubg@2x.jpg 2x, images/pubg@3x.jpg 3x",
-            alt         : function (){
-                return this.gameName;
-            },
-            category    : "Action",
-            description : "Deal 5000 damage to enemies with grenades.",
-            points      : 100,
-            energy      : 300
-        },
-        {
-            gameName    : "Mayhem Combat",
-            src         : "images/mayhem.jpg",
-            srcset      : "images/mayhem.jpg 1x, images/mayhem@2x.jpg 2x, images/mayhem@3x.jpg 3x",
-            alt         : function (){
-                return this.gameName;
-            },
-            category    : "Action",
-            description : "Win 10 games per character Mike.",
-            points      : 70,
-            energy      : 200
-        },
-        {
-            gameName    : "Burrito Bison: Launcha Libre",
-            src         : "images/BurritoBison.jpg",
-            srcset      : "images/BurritoBison.jpg 1x, images/BurritoBison@2x.jpg 2x, images/BurritoBison@3x.jpg 3x",
-            alt         : function (){
-                return this.gameName;
-            },
-            category    : "Action",
-            description : "Earn 10,000 сoins.",
-            points      : 150,
-            energy      : 400
-        },
-        {
-            gameName    : "Battlelands Royale",
-            src         : "images/BattlelandsRoyale.jpg",
-            srcset      : "images/BattlelandsRoyale.jpg 1x, images/BattlelandsRoyale@2x.jpg 2x, images/BattlelandsRoyale@3x.jpg 3x",
-            alt         : function (){
-                return this.gameName;
-            },
-            category    : "Action",
-            description : "Eliminate 10 opponents.",
-            points      : 100,
-            energy      : 300
-        },
-        {
-            gameName    : "PUBG Mobile",
-            src         : "images/pubg.jpg",
-            srcset      : "images/pubg.jpg 1x, images/pubg@2x.jpg 2x, images/pubg@3x.jpg 3x",
-            alt         : function (){
-                return this.gameName;
-            },
-            category    : "Action",
-            description : "Deal 5000 damage to enemies with grenades.",
-            points      : 100,
-            energy      : 300
-        },
-        {
-            gameName    : "Mayhem Combat",
-            src         : "images/mayhem.jpg",
-            srcset      : "images/mayhem.jpg 1x, images/mayhem@2x.jpg 2x, images/mayhem@3x.jpg 3x",
-            alt         : function (){
-                return this.gameName;
-            },
-            category    : "Action",
-            description : "Win 10 games per character Mike.",
-            points      : 70,
-            energy      : 200
-        },
-        {
-            gameName    : "Burrito Bison: Launcha Libre",
-            src         : "images/BurritoBison.jpg",
-            srcset      : "images/BurritoBison.jpg 1x, images/BurritoBison@2x.jpg 2x, images/BurritoBison@3x.jpg 3x",
-            alt         : function (){
-                return this.gameName;
-            },
-            category    : "Action",
-            description : "Earn 10,000 сoins.",
-            points      : 150,
-            energy      : 400
-        },
-        {
-            gameName    : "Battlelands Royale",
-            src         : "images/BattlelandsRoyale.jpg",
-            srcset      : "images/BattlelandsRoyale.jpg 1x, images/BattlelandsRoyale@2x.jpg 2x, images/BattlelandsRoyale@3x.jpg 3x",
-            alt         : function (){
-                return this.gameName;
-            },
-            category    : "Action",
-            description : "Eliminate 10 opponents.",
-            points      : 100,
-            energy      : 300
-        }
-    ]
 
     let card = document.createElement('div');
     if(card){
@@ -115,7 +17,7 @@
         img.classList.add('game-img');
         img.setAttribute('src', gameCards[i].src);
         img.setAttribute('srcset', gameCards[i].srcset);
-        img.setAttribute('Alt', gameCards[i].alt());
+        img.setAttribute('Alt', gameCards[i].gameName);
         poster.appendChild(img);
     }
     
@@ -161,7 +63,7 @@
 }
 
 function createWeeklyQuest(){
-    for(let i = 0; i < 8; i++){
+    for(let i = 0; i < gameCards.length; i++){
         WeeklyQuest(i);
     }
 }
@@ -292,6 +194,27 @@ function sidebar(){
     });
 }
 
+function pages(){
+    let sections = [...document.querySelectorAll('main .body')];
+    let allPages = [...document.querySelectorAll('.nav-left-link')].slice(0,-1);
+    allPages.forEach((page,i) => {
+        page.addEventListener('click', () => {
+            page.classList.add('active');
+            allPages.filter(other => {
+                if(other != page){
+                    other.classList.remove('active');
+                }
+            })
+            sections[i+1].classList.add('active');
+            sections.filter(section => {
+                if(section != sections[i+1]){
+                    section.classList.remove('active');
+                }
+            })
+
+        })
+    });
+}
 
 
 window.addEventListener('load', () => {
@@ -299,4 +222,5 @@ window.addEventListener('load', () => {
     sidebar();
     createWeeklyQuest();
     slider();
+    pages();
 })
