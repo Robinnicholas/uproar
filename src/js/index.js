@@ -1,4 +1,78 @@
- function WeeklyQuest(i){
+let gameCards = [
+    {
+        "gameName"    : "PUBG Mobile",
+        "src"         : "images/pubg.jpg",
+        "srcset"      : "images/pubg.jpg 1x, images/pubg@2x.jpg 2x, images/pubg@3x.jpg 3x",
+        "category"    : "Action",
+        "description" : "Deal 5000 damage to enemies with grenades.",
+        "points"      : 100,
+        "energy"      : 300
+    },
+    {
+        "gameName"    : "Mayhem Combat",
+        "src"         : "images/mayhem.jpg",
+        "srcset"      : "images/mayhem.jpg 1x, images/mayhem@2x.jpg 2x, images/mayhem@3x.jpg 3x",
+        "category"    : "Action",
+        "description" : "Win 10 games per character Mike.",
+        "points"      : 70,
+        "energy"      : 200
+    },
+    {
+        "gameName"    : "Burrito Bison: Launcha Libre",
+        "src"         : "images/BurritoBison.jpg",
+        "srcset"      : "images/BurritoBison.jpg 1x, images/BurritoBison@2x.jpg 2x, images/BurritoBison@3x.jpg 3x",
+        "category"    : "Action",
+        "description" : "Earn 10,000 сoins.",
+        "points"      : 150,
+        "energy"      : 400
+    },
+    {
+        "gameName"    : "Battlelands Royale",
+        "src"         : "images/BattlelandsRoyale.jpg",
+        "srcset"      : "images/BattlelandsRoyale.jpg 1x, images/BattlelandsRoyale@2x.jpg 2x, images/BattlelandsRoyale@3x.jpg 3x",
+        "category"    : "Action",
+        "description" : "Eliminate 10 opponents.",
+        "points"      : 100,
+        "energy"      : 300
+    },
+    {
+        "gameName"    : "PUBG Mobile",
+        "src"         : "images/pubg.jpg",
+        "srcset"      : "images/pubg.jpg 1x, images/pubg@2x.jpg 2x, images/pubg@3x.jpg 3x",
+        "category"    : "Action",
+        "description" : "Deal 5000 damage to enemies with grenades.",
+        "points"      : 100,
+        "energy"      : 300
+    },
+    {
+        "gameName"    : "Mayhem Combat",
+        "src"         : "images/mayhem.jpg",
+        "srcset"      : "images/mayhem.jpg 1x, images/mayhem@2x.jpg 2x, images/mayhem@3x.jpg 3x",
+        "category"    : "Action",
+        "description" : "Win 10 games per character Mike.",
+        "points"      : 70,
+        "energy"      : 200
+    },
+    {
+        "gameName"    : "Burrito Bison: Launcha Libre",
+        "src"         : "images/BurritoBison.jpg",
+        "srcset"      : "images/BurritoBison.jpg 1x, images/BurritoBison@2x.jpg 2x, images/BurritoBison@3x.jpg 3x",
+        "category"    : "Action",
+        "description" : "Earn 10,000 сoins.",
+        "points"      : 150,
+        "energy"      : 400
+    },
+    {
+        "gameName"    : "Battlelands Royale",
+        "src"         : "images/BattlelandsRoyale.jpg",
+        "srcset"      : "images/BattlelandsRoyale.jpg 1x, images/BattlelandsRoyale@2x.jpg 2x, images/BattlelandsRoyale@3x.jpg 3x",
+        "category"    : "Action",
+        "description" : "Eliminate 10 opponents.",
+        "points"      : 100,
+        "energy"      : 300
+    }
+];
+function WeeklyQuest(i){
     let stage = document.querySelector('.card-stage');
 
     let card = document.createElement('div');
